@@ -16,7 +16,7 @@ class Document extends NextDocument {
         return (
             <Html lang="en">
                 <Head />
-                <body>
+                <body className="font-sans antialiased">
                     <Main />
                     <NextScript />
                 </body>
