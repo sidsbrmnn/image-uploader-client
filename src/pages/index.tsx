@@ -1,6 +1,7 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
 
 import Head from '../components/head';
+import { uploadFile } from '../lib/api';
 
 const HomePage = () => {
     const [file, setFile] = useState<File | null>(null);
@@ -14,8 +15,9 @@ const HomePage = () => {
         event.preventDefault();
 
         if (file) {
-            const formData = new FormData();
-            formData.append('file', file);
+            const data = new FormData();
+            data.append('file', file);
+            await uploadFile(data);
         }
     };
 
